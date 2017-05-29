@@ -1,0 +1,60 @@
+2017-05-31 16:28:47,585|ERROR|test_debugging.py,52|test_debugging_with_file_config: This should be an error
+2017-05-31 16:28:47,590|WARNING|test_debugging.py,53|test_debugging_with_file_config: This should be a warning
+2017-05-31 16:28:47,593|INFO|test_debugging.py,54|test_debugging_with_file_config: This should be a stdout
+2017-05-31 16:28:47,596|DEBUG|D1|test_debugging.py,55|test_debugging_with_file_config: This should be a debug message
+2017-05-31 16:28:47,599|DEBUG|D2|test_debugging.py,56|test_debugging_with_file_config: This should be a level 2 dbg message!
+2017-05-31 16:28:47,602|DEBUG|D1|test_debugging.py,58|test_debugging_with_file_config: can also use like this!
+2017-05-31 16:30:29,929|ERROR|test_debugging.py,52|test_debugging_with_file_config: This should be an error
+2017-05-31 16:30:29,932|WARNING|test_debugging.py,53|test_debugging_with_file_config: This should be a warning
+2017-05-31 16:30:29,934|INFO|test_debugging.py,54|test_debugging_with_file_config: This should be a stdout
+2017-05-31 16:30:29,936|DEBUG|D1|test_debugging.py,55|test_debugging_with_file_config: This should be a debug message
+2017-05-31 16:30:29,938|DEBUG|D2|test_debugging.py,56|test_debugging_with_file_config: This should be a level 2 dbg message!
+2017-05-31 16:30:29,941|DEBUG|D1|test_debugging.py,58|test_debugging_with_file_config: can also use like this!
+2017-05-31 16:46:18,218|ERROR|test_debugging.py,52|test_debugging_with_file_config: This should be an error
+2017-05-31 16:46:18,220|WARNING|test_debugging.py,53|test_debugging_with_file_config: This should be a warning
+2017-05-31 16:46:18,223|INFO|test_debugging.py,54|test_debugging_with_file_config: This should be a stdout
+2017-05-31 16:46:18,225|DEBUG|D1|test_debugging.py,55|test_debugging_with_file_config: This should be a debug message
+2017-05-31 16:46:18,227|DEBUG|D2|test_debugging.py,56|test_debugging_with_file_config: This should be a level 2 dbg message!
+2017-05-31 16:46:18,229|DEBUG|D1|test_debugging.py,58|test_debugging_with_file_config: can also use like this!
+2017-05-31 16:55:39,245|ERROR|test_debugging.py,52|test_debugging_with_file_config: This should be an error
+2017-05-31 16:55:39,247|WARNING|test_debugging.py,53|test_debugging_with_file_config: This should be a warning
+2017-05-31 16:55:39,249|INFO|test_debugging.py,54|test_debugging_with_file_config: This should be a stdout
+2017-05-31 16:55:39,253|DEBUG|D1|test_debugging.py,55|test_debugging_with_file_config: This should be a debug message
+2017-05-31 16:55:39,257|DEBUG|D2|test_debugging.py,56|test_debugging_with_file_config: This should be a level 2 dbg message!
+2017-05-31 16:55:39,259|DEBUG|D1|test_debugging.py,58|test_debugging_with_file_config: can also use like this!
+2017-05-31 17:09:23,242|ERROR|test_debugging.py,52|test_debugging_with_file_config: This should be an error
+2017-05-31 17:09:23,245|WARNING|test_debugging.py,53|test_debugging_with_file_config: This should be a warning
+2017-05-31 17:09:23,248|INFO|test_debugging.py,54|test_debugging_with_file_config: This should be a stdout
+2017-05-31 17:09:23,251|DEBUG|D1|test_debugging.py,55|test_debugging_with_file_config: This should be a debug message
+2017-05-31 17:09:23,253|DEBUG|D2|test_debugging.py,56|test_debugging_with_file_config: This should be a level 2 dbg message!
+2017-05-31 17:09:23,256|DEBUG|D1|test_debugging.py,58|test_debugging_with_file_config: can also use like this!
+2017-05-31 17:27:38,236|ERROR|test_debugging.py,52|test_debugging_with_file_config: This should be an error
+2017-05-31 17:27:38,239|WARNING|test_debugging.py,53|test_debugging_with_file_config: This should be a warning
+2017-05-31 17:27:38,241|INFO|test_debugging.py,54|test_debugging_with_file_config: This should be a stdout
+2017-05-31 17:27:38,243|DEBUG|D1|test_debugging.py,55|test_debugging_with_file_config: This should be a debug message
+2017-05-31 17:27:38,245|DEBUG|D2|test_debugging.py,56|test_debugging_with_file_config: This should be a level 2 dbg message!
+2017-05-31 17:27:38,248|DEBUG|D1|test_debugging.py,58|test_debugging_with_file_config: can also use like this!
+2017-05-31 17:43:58,476|ERROR|test_debugging.py,52|test_debugging_with_file_config: This should be an error
+2017-05-31 17:43:58,478|WARNING|test_debugging.py,53|test_debugging_with_file_config: This should be a warning
+2017-05-31 17:43:58,481|INFO|test_debugging.py,54|test_debugging_with_file_config: This should be a stdout
+2017-05-31 17:43:58,484|DEBUG|D1|test_debugging.py,55|test_debugging_with_file_config: This should be a debug message
+2017-05-31 17:43:58,487|DEBUG|D2|test_debugging.py,56|test_debugging_with_file_config: This should be a level 2 dbg message!
+2017-05-31 17:43:58,488|DEBUG|D1|test_debugging.py,58|test_debugging_with_file_config: can also use like this!
+2017-05-31 18:13:06,608|ERROR|test_debugging.py,52|test_debugging_with_file_config: This should be an error
+2017-05-31 18:13:06,613|WARNING|test_debugging.py,53|test_debugging_with_file_config: This should be a warning
+2017-05-31 18:13:06,617|INFO|test_debugging.py,54|test_debugging_with_file_config: This should be a stdout
+2017-05-31 18:13:06,621|DEBUG|D1|test_debugging.py,55|test_debugging_with_file_config: This should be a debug message
+2017-05-31 18:13:06,625|DEBUG|D2|test_debugging.py,56|test_debugging_with_file_config: This should be a level 2 dbg message!
+2017-05-31 18:13:06,628|DEBUG|D1|test_debugging.py,58|test_debugging_with_file_config: can also use like this!
+2017-05-31 18:31:04,198|ERROR|test_debugging.py,52|test_debugging_with_file_config: This should be an error
+2017-05-31 18:31:04,201|WARNING|test_debugging.py,53|test_debugging_with_file_config: This should be a warning
+2017-05-31 18:31:04,203|INFO|test_debugging.py,54|test_debugging_with_file_config: This should be a stdout
+2017-05-31 18:31:04,206|DEBUG|D1|test_debugging.py,55|test_debugging_with_file_config: This should be a debug message
+2017-05-31 18:31:04,208|DEBUG|D2|test_debugging.py,56|test_debugging_with_file_config: This should be a level 2 dbg message!
+2017-05-31 18:31:04,210|DEBUG|D1|test_debugging.py,58|test_debugging_with_file_config: can also use like this!
+2017-05-31 18:37:52,488|ERROR|test_debugging.py,52|test_debugging_with_file_config: This should be an error
+2017-05-31 18:37:52,493|WARNING|test_debugging.py,53|test_debugging_with_file_config: This should be a warning
+2017-05-31 18:37:52,495|INFO|test_debugging.py,54|test_debugging_with_file_config: This should be a stdout
+2017-05-31 18:37:52,497|DEBUG|D1|test_debugging.py,55|test_debugging_with_file_config: This should be a debug message
+2017-05-31 18:37:52,500|DEBUG|D2|test_debugging.py,56|test_debugging_with_file_config: This should be a level 2 dbg message!
+2017-05-31 18:37:52,502|DEBUG|D1|test_debugging.py,58|test_debugging_with_file_config: can also use like this!

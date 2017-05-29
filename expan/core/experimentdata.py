@@ -179,7 +179,8 @@ class ExperimentData(object):
             len(self.feature_names),
             len(self.kpi_names),
             self.metadata.get('primary_KPI', 'undefined'),
-            self.features.index.nunique()  # TODO: should we explicitly count unique entities?
+            # self.features.index.nunique()  #TODO: should we explicitly count unique entities?
+            self.features.shape[0]  # number of entities for now, fixes failing print
         )
 
     def __repr__(self):
