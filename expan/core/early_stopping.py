@@ -25,11 +25,11 @@ def obrien_fleming(information_fraction, alpha=0.05):
 	return (1-norm.cdf(norm.ppf(1-alpha/2)/np.sqrt(information_fraction)))*2
 
 
-def group_sequential(x, 
-					 y, 
-					 spending_function='obrien_fleming', 
-					 information_fraction=1, 
-					 alpha=0.05, 
+def group_sequential(x,
+					 y,
+					 spending_function='obrien_fleming',
+					 information_fraction=1,
+					 alpha=0.05,
 					 cap=8):
 	"""
 	Group sequential method to determine whether to stop early or not.
@@ -59,11 +59,11 @@ def group_sequential(x,
 		raise ValueError('Please provide two non-None samples.')
 
 	# Coercing missing values to right format
-	_x = np.array(x, dtype=float) 
-	_y = np.array(y, dtype=float) 
+	_x = np.array(x, dtype=float)
+	_y = np.array(y, dtype=float)
 
 	# if scalar, assume equal spacing between the intervals
-	#if not isinstance(information_fraction, list): 
+	#if not isinstance(information_fraction, list):
 	#	fraction = np.linspace(0,1,information_fraction+1)[1:]
 	#else:
 	#	fraction = information_fraction
@@ -88,7 +88,7 @@ def group_sequential(x,
 	n_x = statx.sample_size(_x)
 	n_y = statx.sample_size(_y)
 	z = (mu_x-mu_y) / np.sqrt(sigma_x**2/n_x+sigma_y**2/n_y)
-    
+
 	if z > bound or z < -bound:
 		stop = 1
 	else:
@@ -119,7 +119,7 @@ def HDI_from_MCMC(posterior_samples, credible_mass=0.95):
     return(HDImin, HDImax)
 
 
-def _bayes_sampling(x, y, distribution='normal'):
+def _bayes_sampling(x, y, distribution='normal', num_iter=2000):
 	"""
 	Helper function.
 
@@ -142,8 +142,8 @@ def _bayes_sampling(x, y, distribution='normal'):
 		raise ValueError('Please provide two non-None samples.')
 
 	# Coercing missing values to right format
-	_x = np.array(x, dtype=float) 
-	_y = np.array(y, dtype=float) 
+	_x = np.array(x, dtype=float)
+	_y = np.array(y, dtype=float)
 
 	mu_x = np.nanmean(_x)
 	mu_y = np.nanmean(_y)
@@ -151,21 +151,21 @@ def _bayes_sampling(x, y, distribution='normal'):
 	n_y = statx.sample_size(_y)
 
 	if distribution == 'normal':
-		fit_data = {'Nc': n_y, 
-					'Nt': n_x, 
-					'x': _x, 
+		fit_data = {'Nc': n_y,
+					'Nt': n_x,
+					'x': _x,
 					'y': _y}
 	elif distribution == 'poisson':
-		fit_data = {'Nc': n_y, 
-					'Nt': n_x, 
-					'x': _x.astype(int), 
+		fit_data = {'Nc': n_y,
+					'Nt': n_x,
+					'x': _x.astype(int),
 					'y': _y.astype(int)}
 	else:
 		raise NotImplementedError
 	model_file = __location__ + '/../models/' + distribution + '_kpi.stan'
 	sm = StanModel(file=model_file)
 
-	fit = sm.sampling(data=fit_data, iter=25000, chains=4, n_jobs=1, seed=1, control={'stepsize':0.01,'adapt_delta':0.99})
+	fit = sm.sampling(data=fit_data, iter=num_iter, chains=4, n_jobs=1, seed=1, control={'stepsize':0.01,'adapt_delta':0.99})
 	traces = fit.extract()
 
 	return traces, n_x, n_y, mu_x, mu_y
