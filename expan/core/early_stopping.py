@@ -122,7 +122,7 @@ def HDI_from_MCMC(posterior_samples, credible_mass=0.95):
     return (HDImin, HDImax)
 
 
-def _bayes_sampling(x, y, distribution='normal', num_iters=25000):
+def _bayes_sampling(x, y, num_iters=25000, distribution='normal'):
     """
     Helper function.
 
@@ -176,7 +176,7 @@ def _bayes_sampling(x, y, distribution='normal', num_iters=25000):
     return traces, n_x, n_y, mu_x, mu_y
 
 
-def bayes_factor(x, y, distribution='normal'):
+def bayes_factor(x, y, num_iters, distribution='normal'):
     """
     Args:
         x (array_like): sample of a treatment group
@@ -194,7 +194,7 @@ def bayes_factor(x, y, distribution='normal'):
             - absolute mean of x
             - absolute mean of y
     """
-    traces, n_x, n_y, mu_x, mu_y = _bayes_sampling(x, y, distribution=distribution)
+    traces, n_x, n_y, mu_x, mu_y = _bayes_sampling(x, y, num_iters=num_iters, distribution=distribution)
     kde = gaussian_kde(traces['delta'])
 
     prior = cauchy.pdf(0, loc=0, scale=1)
@@ -208,7 +208,7 @@ def bayes_factor(x, y, distribution='normal'):
     return stop, mu_x - mu_y, {'lower': interval[0], 'upper': interval[1]}, n_x, n_y, mu_x, mu_y
 
 
-def bayes_precision(x, y, distribution='normal', posterior_width=0.08):
+def bayes_precision(x, y, num_iters, distribution='normal', posterior_width=0.08):
     """
     Args:
         x (array_like): sample of a treatment group
@@ -228,7 +228,7 @@ def bayes_precision(x, y, distribution='normal', posterior_width=0.08):
             - absolute mean of x
             - absolute mean of y
     """
-    traces, n_x, n_y, mu_x, mu_y = _bayes_sampling(x, y, distribution=distribution)
+    traces, n_x, n_y, mu_x, mu_y = _bayes_sampling(x, y, num_iters=num_iters, distribution=distribution)
     interval = HDI_from_MCMC(traces['delta'])
     stop = int(interval[1] - interval[0] < posterior_width)
     print(interval)

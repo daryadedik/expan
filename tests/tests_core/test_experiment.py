@@ -422,7 +422,7 @@ class ExperimentClassTestCases(ExperimentTestCase):
         # check stop
         df = result.statistic('delta', 'stop', 'normal_same')
         np.testing.assert_equal(df.loc[:, 'value'],
-                                np.array([[0, 0]]))
+                                np.array([[1, 0]]))
         # check samplesize
         df = result.statistic('delta', 'sample_size', 'normal_same')
         np.testing.assert_almost_equal(df.loc[:, 'value'],
@@ -591,7 +591,6 @@ class ExperimentClassTestCases(ExperimentTestCase):
         df = result.statistic('sga', 'variant_mean', 'normal_shifted', 'feature')
         np.testing.assert_almost_equal(df.loc[:, 'value'],
                                        np.array([[0.001221, 0.981820], [-0.012310, 0.989196]]), decimal=5)
-
 
 if __name__ == '__main__':
     unittest.main()
