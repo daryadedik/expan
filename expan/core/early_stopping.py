@@ -122,7 +122,7 @@ def HDI_from_MCMC(posterior_samples, credible_mass=0.95):
     return (HDImin, HDImax)
 
 
-def _bayes_sampling(x, y, distribution='normal'):
+def _bayes_sampling(x, y, distribution='normal', num_iters=25000):
     """
     Helper function.
 
@@ -131,6 +131,7 @@ def _bayes_sampling(x, y, distribution='normal'):
         y (array_like): sample of a control group
         distribution: name of the KPI distribution model, which assumes a
             Stan model file with the same name exists
+        num_iters: number of iterations of sampling
 
     Returns:
         tuple:
@@ -168,7 +169,7 @@ def _bayes_sampling(x, y, distribution='normal'):
     model_file = __location__ + '/../models/' + distribution + '_kpi.stan'
     sm = StanModel(file=model_file)
 
-    fit = sm.sampling(data=fit_data, iter=25000, chains=4, n_jobs=1, seed=1,
+    fit = sm.sampling(data=fit_data, iter=num_iters, chains=4, n_jobs=1, seed=1,
                       control={'stepsize': 0.01, 'adapt_delta': 0.99})
     traces = fit.extract()
 
