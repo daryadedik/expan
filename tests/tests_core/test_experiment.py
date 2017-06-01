@@ -378,7 +378,7 @@ class ExperimentClassTestCases(ExperimentTestCase):
         self.assertTrue(self.experiment.baseline_variant == 'B')
 
         res = Results(None, metadata=self.experiment.metadata)
-        result = self.experiment.bayes_factor_delta(result=res, kpis_to_analyse=['normal_same'])
+        result = self.experiment.bayes_factor_delta(result=res, kpis_to_analyse=['normal_same'], num_iters=2000)
 
         # check uplift
         df = result.statistic('delta', 'uplift', 'normal_same')
@@ -413,7 +413,7 @@ class ExperimentClassTestCases(ExperimentTestCase):
         self.assertTrue(self.experiment.baseline_variant == 'B')
 
         res = Results(None, metadata=self.experiment.metadata)
-        result = self.experiment.bayes_precision_delta(result=res, kpis_to_analyse=['normal_same'])
+        result = self.experiment.bayes_precision_delta(result=res, kpis_to_analyse=['normal_same'], num_iters=2000)
 
         # check uplift
         df = result.statistic('delta', 'uplift', 'normal_same')
