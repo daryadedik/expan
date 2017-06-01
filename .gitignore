@@ -75,3 +75,6 @@ ExpAn-Intro.slides.html
 
 # Mac system file
 *.DS_Store
+
+# Tests debugging logs
+test_debugging.log.*
