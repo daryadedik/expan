@@ -183,7 +183,8 @@ def bayes_factor(x, y, num_iters, distribution='normal'):
         y (array_like): sample of a control group
         distribution: name of the KPI distribution model, which assumes a
             Stan model file with the same name exists
-
+        num_iters: number of iterations for bayes sampling
+        
     Returns:
         tuple: 
             - stop label
@@ -217,6 +218,7 @@ def bayes_precision(x, y, num_iters, distribution='normal', posterior_width=0.08
             Stan model file with the same name exists
         posterior_width: the stopping criterion, threshold of the posterior 
             width
+        num_iters: number of iterations for the bayes sampling
 
     Returns:
         tuple: 

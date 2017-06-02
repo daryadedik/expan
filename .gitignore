@@ -78,3 +78,6 @@ ExpAn-Intro.slides.html
 
 # Tests debugging logs
 test_debugging.log.*
+
+# Unit tests study folder
+unittest_study/

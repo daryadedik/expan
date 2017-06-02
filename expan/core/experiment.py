@@ -254,6 +254,7 @@ class Experiment(ExperimentData):
             kpis_to_analyse: list of KPIs to be analysed
             distribution: name of the KPI distribution model, which assumes a
                 Stan model file with the same name exists
+            num_iters: number of iterations for the bayes sampling
 
         Returns:
             a Results object
@@ -303,6 +304,7 @@ class Experiment(ExperimentData):
                 Stan model file with the same name exists
             posterior_width: the stopping criterion, threshold of the posterior 
                 width
+            num_iters: number of iterations for the bayes sampling
 
         Returns:
             a Results object
